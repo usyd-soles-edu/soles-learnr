@@ -1,0 +1,44 @@
+---
+title: Multi-line title of the tutorial goes here
+output: 
+  learnr::tutorial:
+    css: styles.css
+    progressive: true
+    allow_skip: true
+  html_document:
+    css: styles.css
+runtime: shiny_prerendered
+---
+
+```{r setup, eval=TRUE, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+![](images/usyd_horizontal.svg)
+
+## Introduction
+
+This is a template for creating a tutorial using the `learnr` package. The bare minimum branding has been added -- a horizontal logo is placed on top of the page to indicate that this is a University of Sydney document.
+
+If you look at the YAML section you will notice that we have enabled some options:
+
+- `progressive: true`: this splits the document into pages based on the subheading `##` (see below). Useful for longer tutorials. Set to `false` if you want to have a single page.
+- `allow_skip: true`: allows skipping of pages.
+
+### Deployment
+
+Assuming that you have cloned the soles-learnr repository, deployment is as simple as changing the link in the README.md file to point to your tutorial.
+
+Click "Next Topic" to continue.
+
+## Features
+
+For most of us, being able to structure a tutorial into smaller "chunks" is good enough. Simply use the `##` subheading to create a new page. 
+
+But there are additional features that can be useful for teaching. The first is the ability to 
+
+## Code blocks
+
+## Getting students to try code
