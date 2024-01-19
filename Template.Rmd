@@ -6,7 +6,6 @@ output:
     progressive: true
     allow_skip: true
   html_document:
-    css: styles.css
 runtime: shiny_prerendered
 ---
 
