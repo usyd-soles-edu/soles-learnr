@@ -1,5 +1,5 @@
 channels:
   - conda-forge
 dependencies:
-  - r-base=4.3.2
+  - r-base=4.2.2
   - r-learnr
