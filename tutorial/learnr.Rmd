@@ -23,51 +23,42 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Introduction
 
-*This document developed using resources that are available under a [Creative Commons Attribution 4.0 International license](https://github.com/usyd-soles-edu/.github/blob/main/cc-by), made available on the [SOLES Open Educational Resources repository](https://github.com/usyd-soles-edu).*
+This is a template for creating interactive tutorials using the [`learnr`](https://rstudio.github.io/learnr/) package in R. Anyone using this template is expected to have a basic understanding of R and RStudio, GitHub and the .git workflow.
 
-### About
 
-This template is aimed at anyone who are **already familiar with technical writing tools such as R Markdown and Quarto** and wish to deploy a `learnr` type document online.
-The *bare minimum* branding has been added, including sidebar text and a horizontal logo placed on top of the page. 
-
+*This document is developed using resources that are available under a [Creative Commons Attribution 4.0 International license](https://github.com/usyd-soles-edu/.github/blob/main/cc-by), made available on the [SOLES Open Educational Resources repository](https://github.com/usyd-soles-edu).*
 
 ### Why `learnr`?
 
 The `learnr` package creates interactive tutorials that can be hosted online. Interaction is done through a [Shiny](https://www.rstudio.com/products/shiny/) framework, which is embedded in the document. Features include the ability to run code within the document itself, and to provide responsive feedback to students.
 
-Interestingly, a **very popular** feature is the ability to present information in small *chunks* which provides opportunity for scaffolding and reflection. This is done automatically though headings -- look at the source code of this document to see how it is done.
-
 ## Deployment
 
-There are many ways to [deploy](https://rstudio.github.io/learnr/articles/publishing.html) `learnr` documents, but we will only be covering one method here.
+There are many ways to deploy `learnr` documents, but we will only be covering one method here as it is not well documented. For other established methods of deployment, please refer to the [official documentation](https://rstudio.github.io/learnr/articles/publishing.html).
 
 ### Binder
 
-[Binder](https://mybinder.org/) is a free service that allows you to host interactive documents online for *free*. However, that Binder is not a commercial service, and so there are no guarantees that your document will be available at all times. If you want a persistent document, you will need to host it yourself, or [deploy on shinyapps.io](https://rstudio.github.io/learnr/articles/shinyapps-publishing.html).
-
-::: {.alert .alert-warning}
-Binder relies on the generosity of others to provide the computational resources. If you are using Binder, please consider donating to the [Binder project](https://mybinder.org/) (click on the donate button on this page) to help keep it running.
-:::
+[Binder](https://mybinder.org/) is a free service that allows you to host interactive documents online for *free*. However, Binder is not a commercial service, so there are no guarantees that your document will be available at all times. Nevertheless it is a good way to get started with `learnr` documents if you are on a tight educational budget.
 
 *Click on "Continue" for instructions.*
 
 ### Instructions
 
-Before we begin, you will need to have a GitHub account. If you don't have one, you can [sign up for free](https://github.com/signup). You are also expected to understand the .git workflow, where we stage, commit, push and pull from the repository as we work on it. If you need help with .git, check this guide [here](https://happygitwithr.com/rstudio-git-github.html).
+Before we begin, you will need to have a GitHub account. If you don't have one, you can [sign up for free](https://github.com/signup). You are also expected to understand the .git workflow, where you will stage, commit, push and pull from the repository. If you need help with .git, check this guide [here](https://happygitwithr.com/rstudio-git-github.html).
 
-### Step 1
+### Step 1: Create a new repository from the Template
 
 Go to the [soles-learnr](https://github.com/usyd-soles-edu/soles-learnr) repository on GitHub. Click on the "**Use this template**" button. Then select "**Create a new repository**". 
 
 ![](images/use-this-template.jpeg){width=100%}
 
-### Step 2
+### Step 2: Give the new repository a name
 
 Give your new repository a name. Other options can be left to default. Once you are happy, click on "**Create Repository**". Below we have named the repository `envx2001-tutorials`.
 
 ![](images/create-new-repo.png){width=100%}
 
-### Step 3
+### Step 3: Edit the link to the Binder site
 
 Once the repository has been created, you will need to change the link to the Binder site to point to your repository. This link is in your `README.md` file.
 
@@ -81,11 +72,11 @@ So, the link to the Binder site should be changed to *https:<area>//mybinder.org
 
 Note that if you change your file name or move it to a different directory, you will need to update the link accordingly, specifically the last part of the link i.e. *...urlpath=shiny/**tutorial/learnr.Rmd***. For example, if the file name is changed to `tutorial_01.Rmd` and you move the file to a different folder called `Module01` then the link should be changed to *...urlpath=shiny/**Module01/tutorial_01.Rmd***.
 
-### Step 4
+### Step 4: Adjust R dependencies, finalise and test
 
 Edit the document as you see fit, and knit often to view the changes locally.
 
-Once you are done, you will need to do a final step to ensure that your R dependencies are included in Binder: edit `environment.yaml` to include all the R packages that you used in your document. This allows Binder to install them before trying to knit the final document.
+Once you are done, you will need to ensure that your R dependencies are included in Binder. Edit `environment.yaml` to include all the R packages that you used in your document. This allows Binder to install them before trying to knit the final document.
 
 **Make sure all your changes are committed to the repository before you test the link!**
 
