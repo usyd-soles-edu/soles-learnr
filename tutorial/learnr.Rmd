@@ -54,7 +54,7 @@ Go to the [soles-learnr](https://github.com/usyd-soles-edu/soles-learnr) reposit
 
 ### Step 2: Give the new repository a name
 
-Give your new repository a name. Other options can be left to default. Once you are happy, click on "**Create Repository**". Below we have named the repository `envx2001-tutorials`.
+Give your new repository a name. Other options can be left to default. Once you are happy, click on "**Create Repository**". Below we have named the repository `ENVX2001-tutorials`.
 
 ![](images/create-new-repo.png){width=100%}
 
@@ -64,11 +64,11 @@ Once the repository has been created, you will need to change the link to the Bi
 
 By default, the link is *https:<area>//mybinder.org/v2/gh/**usyd-soles-edu/soles-learnr**/main?urlpath=shiny/tutorial/learnr.Rmd*
 
-In our example, we have created a repository called `envx2001-tutorials` under the owner called `ENVX-resources`.
+In our example, we have created a repository called `ENVX2001-tutorials` under the owner called `ENVX-resources`.
 
 ![](images/repo-details.jpeg){width=100%}
 
-So, the link to the Binder site should be changed to *https:<area>//mybinder.org/v2/gh/**ENVX-resources/envx2001-tutorials**/main?urlpath=shiny/tutorial/learnr.Rmd*
+So, the link to the Binder site should be changed to *https:<area>//mybinder.org/v2/gh/**ENVX-resources/ENVX2001-tutorials**/main?urlpath=shiny/tutorial/learnr.Rmd*
 
 Note that if you change your file name or move it to a different directory, you will need to update the link accordingly, specifically the last part of the link i.e. *...urlpath=shiny/**tutorial/learnr.Rmd***. For example, if the file name is changed to `tutorial_01.Rmd` and you move the file to a different folder called `Module01` then the link should be changed to *...urlpath=shiny/**Module01/tutorial_01.Rmd***.
 
@@ -81,3 +81,46 @@ Once you are done, you will need to ensure that your R dependencies are included
 **Make sure all your changes are committed to the repository before you test the link!**
 
 ## Basic usage
+
+It is best to design your document such that students learn by doing, and are not just reading through the document. This is achieved by using the `exercise` and `question` functions.
+
+In addition, because documents are not saved, questions that focus on concepts (rather than code) are ideal, as this allows students to test their understanding of the concepts without having to worry about losing their work.
+
+### Questions
+
+```{r q1, echo=FALSE}
+
+hitchhiker <- "Unfortunately, you will need to have read the Hitchhiker's Guide to the Galaxy (*or read enough references to this*) to answer the question."
+
+question("What is the answer to life, the universe and everything?",
+  answer("42", correct = TRUE),
+  answer("24", message = hitchhiker), 
+  answer("404", message = hitchhiker), 
+  answer("666", message = hitchhiker),
+  random_answer_order = TRUE
+)
+```
+
+
+### Exercises
+
+```{r ex1, exercise=TRUE}
+# Find out how many variables there are in the mtcars dataset 
+# using any method you like.
+mtcars
+```
+<div id="filter-hint">
+**Hint:** You need a function that returns the number of columns in a data frame.
+</div>
+
+```{r ex1-solution}
+# All of these are possible
+ncol(mtcars)
+length(mtcars)
+dim(mtcars)[2]
+```
+
+
+## Thanks
+
+You have reached the end of this tutorial. If you have any questions, send us a message in the form of an issue on the [soles-learnr](https://github.com/usyd-soles-edu/soles-learnr) repository on GitHub
