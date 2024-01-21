@@ -27,6 +27,22 @@ Then, rename the `learnr.Rmd` file, move it across folders, etc. Then, edit the 
 https://mybinder.org/v2/gh/<your-github-username>/<your-repository-name>/main?urlpath=shiny/tutorial/<path-to-your-Rmd-filename>.Rmd
 ```
 
+## Adding R packages
+
+If you use any R packages in your tutorial, you will need to add them to the `environment.yml` file so that Binder knows to install them. To do this, add the package name to the `dependencies` section of the `environment.yml` file, like this:
+
+```yml
+channels:
+  - conda-forge
+dependencies:
+  - r-base>4.3.0
+  - r-learnr
+  - r-ggplot2
+```
+
+
+## Multiple tutorials in one repository
+
 **You can host multiple tutorials in the same repository**, just create a new folder for each tutorial and create a new link for each file accordingly.
 
 ## License and Attribution
