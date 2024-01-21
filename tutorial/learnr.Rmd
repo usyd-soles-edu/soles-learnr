@@ -76,15 +76,19 @@ Note that if you change your file name or move it to a different directory, you 
 
 Edit the document as you see fit, and knit often to view the changes locally.
 
-Once you are done, you will need to ensure that your R dependencies are included in Binder. Edit `environment.yaml` to include all the R packages that you used in your document. This allows Binder to install them before trying to knit the final document.
+Once you are done, you will need to ensure that your R dependencies are included in Binder. Edit `environment.yml` to include all the R packages that you used in your document. This allows Binder to install them before trying to knit the final document. Below is the contents of the `environment.yml` file for this document.
+
+```{yaml, eval=FALSE}
+channels:
+  - conda-forge
+dependencies:
+  - r-base>4.3.0
+  - r-learnr
+```
 
 **Make sure all your changes are committed to the repository before you test the link!**
 
 ## Basic usage
-
-It is best to design your document such that students learn by doing, and are not just reading through the document. This is achieved by using the `exercise` and `question` functions.
-
-In addition, because documents are not saved, questions that focus on concepts (rather than code) are ideal, as this allows students to test their understanding of the concepts without having to worry about losing their work.
 
 ### Questions
 
