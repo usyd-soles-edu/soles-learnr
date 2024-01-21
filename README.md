@@ -25,6 +25,8 @@ Then, rename the `learnr.Rmd` file, move it across folders, etc. Then, edit the 
 https://mybinder.org/v2/gh/<your-github-username>/<your-repository-name>/main?urlpath=shiny/tutorial/<path-to-your-Rmd-filename>.Rmd
 ```
 
+**You can host multiple tutorials in the same repository**, just create a new folder for each tutorial and create a new link for each file accordingly.
+
 ## License and Attribution
 
 This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
