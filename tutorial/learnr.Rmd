@@ -1,8 +1,13 @@
 ---
 title: Multi-line title of the tutorial goes here
+author: 
+  - ---
+  - "**ENVX#### Unit of Study Name**"
+  - School of Life and Environmental Science
+  - The University of Sydney
+  - ---
 output: 
   learnr::tutorial:
-    css: styles.css
     progressive: true
     allow_skip: true
   html_document:
@@ -11,33 +16,77 @@ runtime: shiny_prerendered
 
 ```{r setup, eval=TRUE, include=FALSE}
 library(learnr)
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
-
 
 ![](images/usyd_horizontal.svg)
 
 ## Introduction
 
-This is a template for creating a tutorial using the `learnr` package. The bare minimum branding has been added -- a horizontal logo is placed on top of the page to indicate that this is a University of Sydney document.
+*This document developed using resources that are available under a [Creative Commons Attribution 4.0 International license](https://github.com/usyd-soles-edu/.github/blob/main/cc-by), made available on the [SOLES Open Educational Resources repository](https://github.com/usyd-soles-edu).*
 
-If you look at the YAML section you will notice that we have enabled some options:
+### About
 
-- `progressive: true`: this splits the document into pages based on the subheading `##` (see below). Useful for longer tutorials. Set to `false` if you want to have a single page.
-- `allow_skip: true`: allows skipping of pages.
+This template is aimed at anyone who are **already familiar with technical writing tools such as R Markdown and Quarto** and wish to deploy a `learnr` type document online.
+The *bare minimum* branding has been added, including sidebar text and a horizontal logo placed on top of the page. 
 
-### Deployment
 
-Assuming that you have cloned the soles-learnr repository, deployment is as simple as changing the link in the README.md file to point to your tutorial.
+### Why `learnr`?
 
-Click "Next Topic" to continue.
+The `learnr` package creates interactive tutorials that can be hosted online. Interaction is done through a [Shiny](https://www.rstudio.com/products/shiny/) framework, which is embedded in the document. Features include the ability to run code within the document itself, and to provide responsive feedback to students.
 
-## Features
+Interestingly, a **very popular** feature is the ability to present information in small *chunks* which provides opportunity for scaffolding and reflection. This is done automatically though headings -- look at the source code of this document to see how it is done.
 
-For most of us, being able to structure a tutorial into smaller "chunks" is good enough. Simply use the `##` subheading to create a new page. 
+## Deployment
 
-But there are additional features that can be useful for teaching. The first is the ability to 
+There are many ways to [deploy](https://rstudio.github.io/learnr/articles/publishing.html) `learnr` documents, but we will only be covering one method here.
 
-## Code blocks
+### Binder
 
-## Getting students to try code
+[Binder](https://mybinder.org/) is a free service that allows you to host interactive documents online for *free*. However, that Binder is not a commercial service, and so there are no guarantees that your document will be available at all times. If you want a persistent document, you will need to host it yourself, or [deploy on shinyapps.io](https://rstudio.github.io/learnr/articles/shinyapps-publishing.html).
+
+::: {.alert .alert-warning}
+Binder relies on the generosity of others to provide the computational resources. If you are using Binder, please consider donating to the [Binder project](https://mybinder.org/) (click on the donate button on this page) to help keep it running.
+:::
+
+*Click on "Continue" for instructions.*
+
+### Instructions
+
+Before we begin, you will need to have a GitHub account. If you don't have one, you can [sign up for free](https://github.com/signup). You are also expected to understand the .git workflow, where we stage, commit, push and pull from the repository as we work on it. If you need help with .git, check this guide [here](https://happygitwithr.com/rstudio-git-github.html).
+
+### Step 1
+
+Go to the [soles-learnr](https://github.com/usyd-soles-edu/soles-learnr) repository on GitHub. Click on the "**Use this template**" button. Then select "**Create a new repository**". 
+
+![](images/use-this-template.jpeg){width=100%}
+
+### Step 2
+
+Give your new repository a name. Other options can be left to default. Once you are happy, click on "**Create Repository**". Below we have named the repository `envx2001-tutorials`.
+
+![](images/create-new-repo.png){width=100%}
+
+### Step 3
+
+Once the repository has been created, you will need to change the link to the Binder site to point to your repository. This link is in your `README.md` file.
+
+By default, the link is *https:<area>//mybinder.org/v2/gh/**usyd-soles-edu/soles-learnr**/main?urlpath=shiny/tutorial/learnr.Rmd*
+
+In our example, we have created a repository called `envx2001-tutorials` under the owner called `ENVX-resources`.
+
+![](images/repo-details.jpeg){width=100%}
+
+So, the link to the Binder site should be changed to *https:<area>//mybinder.org/v2/gh/**ENVX-resources/envx2001-tutorials**/main?urlpath=shiny/tutorial/learnr.Rmd*
+
+Note that if you change your file name or move it to a different directory, you will need to update the link accordingly, specifically the last part of the link i.e. *...urlpath=shiny/**tutorial/learnr.Rmd***. For example, if the file name is changed to `tutorial_01.Rmd` and you move the file to a different folder called `Module01` then the link should be changed to *...urlpath=shiny/**Module01/tutorial_01.Rmd***.
+
+### Step 4
+
+Edit the document as you see fit, and knit often to view the changes locally.
+
+Once you are done, you will need to do a final step to ensure that your R dependencies are included in Binder: edit `environment.yaml` to include all the R packages that you used in your document. This allows Binder to install them before trying to knit the final document.
+
+**Make sure all your changes are committed to the repository before you test the link!**
+
+## Basic usage
