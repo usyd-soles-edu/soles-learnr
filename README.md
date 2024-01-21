@@ -4,6 +4,8 @@ This is an R Markdown template for creating a `learnr` tutorial with minimal Uni
 
 View the tutorial [here](https://mybinder.org/v2/gh/usyd-soles-edu/soles-learnr/main?urlpath=shiny/tutorial/learnr.Rmd).
 
+Note that the tutorial might take a few minutes to load the first time you open it as Binder needs to create a virtual environment to run the tutorial in, which involves installing R and all the packages used in the tutorial.
+
 ## Installation
 
 To use this template, you will need to install the `learnr` package:
